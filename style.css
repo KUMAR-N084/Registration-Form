@@ -6,34 +6,46 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg,#e6e9f0,#eef1f5);
+    background: linear-gradient(135deg, #7bb7f0, #b77adf);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+/* ================= CONTAINER ================= */
 .container {
     background: white;
     padding: 25px;
     width: 100%;
     max-width: 700px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
 }
 
 h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
+/* ================= LABELS ================= */
 label {
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
+    color: #444;
 }
 
-input, textarea, select {
+.required::after {
+    content: " *";
+    color: red;
+}
+
+/* ================= INPUTS ================= */
+input,
+textarea,
+select {
     width: 100%;
     padding: 12px;
     border-radius: 6px;
@@ -41,9 +53,11 @@ input, textarea, select {
     font-size: 15px;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #8e44ad;
 }
 
 textarea {
@@ -52,32 +66,42 @@ textarea {
     margin-bottom: 15px;
 }
 
+/* ================= GRID ================= */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
 
-.required::after {
-    content: " *";
-    color: red;
+/* ================= PROFILE PHOTO (FIXED) ================= */
+.profile-photo {
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.profile-photo input {
-    display: none;
+/* HIDE DEFAULT FILE INPUT COMPLETELY */
+.profile-photo input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
 }
 
+/* CUSTOM BUTTON */
 .profile-photo label {
     display: block;
-    background: #007bff;
+    background: linear-gradient(135deg, #5dade2, #9b59b6);
     color: white;
     padding: 12px;
     border-radius: 30px;
     text-align: center;
     cursor: pointer;
-    margin-bottom: 20px;
+    font-weight: bold;
 }
 
+/* ================= CHECKBOX ================= */
 .checkbox {
     margin-top: 10px;
     font-weight: normal;
@@ -88,19 +112,26 @@ textarea {
     margin-right: 8px;
 }
 
+/* ================= REGISTER BUTTON ================= */
 .fake-submit {
     display: block;
     margin-top: 20px;
     padding: 14px;
     width: 100%;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 16px;
-    background: linear-gradient(135deg,#4CAF50,#43a047);
+    background: linear-gradient(135deg, #5dade2, #9b59b6);
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
+.fake-submit:hover {
+    opacity: 0.9;
+}
+
+/* ================= SOCIAL LOGIN ================= */
 .social {
     margin-top: 20px;
     text-align: center;
@@ -114,12 +145,14 @@ textarea {
     color: white;
     border-radius: 6px;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .google { background: #db4437; }
 .facebook { background: #4267B2; }
 .twitter { background: #000; }
 
+/* ================= MODAL ================= */
 .modal {
     position: fixed;
     inset: 0;
@@ -142,43 +175,49 @@ textarea {
     text-align: center;
 }
 
-.close-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
-/* Confirmation table */
+/* ================= CONFIRM TABLE ================= */
 .confirm-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
 }
 
-.confirm-table th, .confirm-table td {
+.confirm-table th,
+.confirm-table td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
 }
 
 .confirm-table th {
-    background: #f0f0f0;
+    background: #f3f3f3;
 }
 
+/* ================= CLOSE BUTTON ================= */
+.close-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #5dade2, #9b59b6);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 20px;
+    color: #eee;
+    font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
     .grid {
         grid-template-columns: 1fr;
     }
+
     .social a {
         width: 100%;
     }
-}
-
-footer {
-    margin-top: 20px;
-    color: #555;
 }
