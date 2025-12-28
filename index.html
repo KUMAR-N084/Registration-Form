@@ -84,7 +84,49 @@
                        aria-required="true" aria-describedby="dobError" aria-invalid="false">
                 <span class="error-message" id="dobError" role="alert" aria-live="assertive"></span>
                 <span class="success-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                
+                <!-- Age Display -->
+                <div id="ageDisplayContainer" class="age-display-container" style="display: none;">
+                    <span class="age-label">Your Age: </span>
+                    <span id="ageDisplay" class="age-value">0</span>
+                    <span class="age-label"> years</span>
+                </div>
             </div>
+
+        <!-- Parental Consent Section -->
+        <div id="parentalConsentSection" class="parental-consent hidden" role="region" aria-labelledby="parentalConsentTitle">
+            <h3 id="parentalConsentTitle">Parental/Guardian Consent Required</h3>
+            <p>You must be 18 or older to register. Please provide parental/guardian information.</p>
+            
+            <div class="form-group">
+                <label for="guardianName" class="required">Parent/Guardian Name</label>
+                <input type="text" id="guardianName" maxlength="100" placeholder="Full name" data-rule="name" 
+                       aria-required="true" aria-describedby="guardianNameError">
+                <span class="error-message" id="guardianNameError" role="alert" aria-live="assertive"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="guardianEmail" class="required">Parent/Guardian Email</label>
+                <input type="email" id="guardianEmail" maxlength="100" placeholder="guardian@email.com" data-rule="email" 
+                       aria-required="true" aria-describedby="guardianEmailError">
+                <span class="error-message" id="guardianEmailError" role="alert" aria-live="assertive"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="guardianPhone" class="required">Parent/Guardian Phone</label>
+                <input type="tel" id="guardianPhone" maxlength="10" placeholder="10-digit number" data-rule="mobile" 
+                       aria-required="true" aria-describedby="guardianPhoneError">
+                <span class="error-message" id="guardianPhoneError" role="alert" aria-live="assertive"></span>
+            </div>
+            
+            <div class="form-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="guardianConsent" aria-required="true">
+                    <span>I confirm that I am the parent/guardian and consent to this registration</span>
+                </label>
+                <span class="error-message" id="guardianConsentError" role="alert" aria-live="assertive"></span>
+            </div>
+        </div>
 
             <!-- Postal Code -->
             <div class="form-group">
@@ -170,41 +212,6 @@
                 <span class="success-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
             </div>
 
-        </div>
-
-        <!-- Parental Consent Section (Hidden by default) -->
-        <div id="parentalConsentSection" class="parental-consent hidden" role="region" aria-labelledby="parentalConsentTitle">
-            <h3 id="parentalConsentTitle">Parental/Guardian Consent Required</h3>
-            <p>You must be 18 or older to register. Please provide parental/guardian information.</p>
-            
-            <div class="form-group">
-                <label for="guardianName" class="required">Parent/Guardian Name</label>
-                <input type="text" id="guardianName" maxlength="100" placeholder="Full name" data-rule="name" 
-                       aria-required="true" aria-describedby="guardianNameError">
-                <span class="error-message" id="guardianNameError" role="alert" aria-live="assertive"></span>
-            </div>
-            
-            <div class="form-group">
-                <label for="guardianEmail" class="required">Parent/Guardian Email</label>
-                <input type="email" id="guardianEmail" maxlength="100" placeholder="guardian@email.com" data-rule="email" 
-                       aria-required="true" aria-describedby="guardianEmailError">
-                <span class="error-message" id="guardianEmailError" role="alert" aria-live="assertive"></span>
-            </div>
-            
-            <div class="form-group">
-                <label for="guardianPhone" class="required">Parent/Guardian Phone</label>
-                <input type="tel" id="guardianPhone" maxlength="10" placeholder="10-digit number" data-rule="mobile" 
-                       aria-required="true" aria-describedby="guardianPhoneError">
-                <span class="error-message" id="guardianPhoneError" role="alert" aria-live="assertive"></span>
-            </div>
-            
-            <div class="form-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" id="guardianConsent" aria-required="true">
-                    <span>I confirm that I am the parent/guardian and consent to this registration</span>
-                </label>
-                <span class="error-message" id="guardianConsentError" role="alert" aria-live="assertive"></span>
-            </div>
         </div>
 
         <!-- Gender Radio Buttons -->
